@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+@import '/src/globas.scss';
+
+
+// removing default styling
+*, body {
+    margin: 0;
+    padding: 0;
+}
+
+.bg-primary {
+    background-color: #007bff; // Adjust to your primary color
+}
+.text-white {
+    color: white;
+}
+
+
+
+// background
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 5rem auto; // Center vertically and horizontally
+    width: calc(100% - 10rem);
+    max-width: 1600px; // Constraint for ultrawide
+    height: calc(100% - 10rem);
+    background-image: url(./Images/bg_img.jpg);   
+    background-size: 125px 125px;
+    background-repeat: round;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 300px;
+    @media (max-width:$s) {
+        margin: 1.5rem;
+        width: calc(100% - 3rem);
+        height: auto; // Allow height to grow
+    }
+    @media (max-width:$xs) {
+        margin: 0.5rem;
+        width: calc(100% - 1rem);
+        height: auto; 
+    }
+    @media (max-width:$mobile) {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+
+
+// scroll styling
+html {
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #acacac;
+    border: 1px #acacac solid;
+    
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #1f1f1f;
+    border-radius: 1rem;
+}
+
+
+
+// classes
+.heading {
+    margin-bottom: 5rem;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    
+    @media (max-width:$s) {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+}
+.para {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    @media (max-width:$m) {
+        font-size: 1.2rem;
+    }
+    @media (max-width:$s) {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,198 @@
+
+@import '/src/globas.scss';
+
+.project_section {
+  /* Change 20rem to a smaller value like 5rem or 10rem */
+  margin: $section-spacing 2rem;
+
+  @media (max-width:$s) {
+      margin: $section-spacing-mobile 0rem; // Remove side margins on mobile
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    &.row_1,
+    &.row_2 {
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      
+      /* Optional: Reduce spacing between project cards if needed */
+      margin-top: 15rem; /* Reduced from 15rem */
+
+      &:first-of-type {
+        margin-top: 0rem;
+      }
+
+      @media (max-width: $l) {
+        margin-top: 5rem;
+      }
+
+      @media (max-width: $m) {
+        margin-top: 3rem;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      @media (max-width: $mobile) {
+        flex-direction: column-reverse; // Image on top, text below (or vice versa depending on preference, usually image top)
+        gap: 1rem;
+      }
+    }
+
+    // Fix for the alternating row logic on mobile
+    &.row_2 {
+        @media (max-width: $mobile) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .desc_col {
+      flex: 5;
+      min-width: 280px;
+
+      @media (max-width: $l) {
+        flex: 1;
+      }
+
+      h2,
+      h3,
+      p {
+        margin-bottom: 10px;
+      }
+
+      .proj_name {
+        font-size: 3rem;
+        color: #333; 
+        font-weight: bold;
+        line-height: 1.2;
+        margin-bottom: 1rem; /* Fixed typo here */
+
+        @media (max-width: $xl) {
+          font-size: 5rem;
+        }
+
+        @media (max-width: $l) {
+          font-size: 4rem;
+        }
+
+        @media (max-width: $m) {
+          font-size: 3.2rem;
+        }
+
+        @media (max-width: $xs) {
+          font-size: 2.4rem;
+        }
+      }
+
+      .proj_designation {
+        font-size: 1.5rem;
+
+        @media (max-width: $xs) {
+          font-size: 1.3rem;
+        }
+      }
+
+      .stack_btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+
+        // 1. Default Style for Skill Tags (Non-clickable look)
+        button {
+          background-color: #333; // Dark Gray for Skills
+          border: none;
+          padding: 10px 20px;
+          border-radius: 20px;
+          color: #fff;
+          font-size: 0.9rem;
+          cursor: default; // Shows it's just a tag
+
+          @media (max-width: $m) {
+            padding: 8px 14px;
+            font-size: 0.8rem;
+          }
+        }
+
+        // 2. Distinct Style for Links (Clickable look)
+        a {
+            text-decoration: none;
+            
+            button {
+                background-color: #2563eb; // "Link Blue"
+                cursor: pointer;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                &:hover {
+                    background-color: #1d4ed8; // Darker blue on hover
+                    transform: translateY(-3px); // Lifts up
+                    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4); // Blue glow
+                }
+            }
+        }
+      }
+    }
+
+    .img_col {
+      flex: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 280px;
+
+      @media (max-width: $l) {
+        flex: 1;
+      }
+
+      .img_shape {
+        height: 20rem;
+        position: absolute;
+        right: 0;
+        top: -1000px;
+      }
+
+      .img_main {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        filter: grayscale(100%);
+        object-fit: cover;
+
+        @media (max-width: $s) {
+          max-width: 100%;
+          height: auto;
+        }
+
+        @media (max-width: $xs) {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &:hover {
+      .proj_name {
+        transition: all 0.2s;
+      }
+
+      .proj_name_1 {
+        color: #1083c659;
+      }
+
+      .proj_name_2 {
+        color: #10cf3059;
+      }
+
+      .img_main {
+        filter: grayscale(0%);
+        transition: all 0.2s;
+      }
+    }
+  }
+}

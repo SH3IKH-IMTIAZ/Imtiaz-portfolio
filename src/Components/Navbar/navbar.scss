@@ -1,0 +1,117 @@
+@import '/src/globas.scss';
+
+
+
+.menu {
+    position: absolute;
+    top: -8rem;
+    right: -4rem;
+    text-align: right;
+    z-index: 1000;
+
+    @media (max-width:$s) {
+        top: -1rem;
+        right: 0rem;
+    }
+
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        padding: 10px;
+        color: #333;
+        z-index: 1001;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        @media (max-width:$m) { 
+            display: block; 
+        }
+    }
+
+    .menu-items {
+         @media (max-width:$m) {  
+            display: none;  
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: absolute;
+            top: 2rem;
+            right: 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 200px;
+            text-align: center;
+            
+            &.show {
+                display: flex;
+            }
+        }
+    }
+
+    .item-wrapper{
+        position:relative;
+    
+        &:hover:before{
+            content:"";
+            z-index:-1;
+            left:-0.5em;
+            top:-0.1em;
+            border-width:2px;
+            border-style:solid;
+            border-color:#333;
+            position:absolute;
+            border-right-color:transparent;
+            width:100%;
+            height:1em;
+            transform:rotate(2deg);
+            opacity:0.7;
+            border-radius:50%;
+            padding:0.1em 0.25em;
+        }
+    
+        &:hover:after{
+            content:"";
+            z-index:-1;
+            left:-0.5em;
+            top:0.1em;
+            padding:0.1em 0.25em;
+            border-width:2px;
+            border-style:solid;
+            border-color:#333;
+            border-left-color:transparent;
+            border-top-color:transparent;
+            position:absolute;
+            width:100%;
+            height:1em;
+            transform:rotate(-1deg);
+            opacity:0.7;
+            border-radius:50%;
+        }
+
+        .item {
+            position: relative;
+            margin: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #333;
+            text-decoration: none;
+            display: inline-block; // Important for padding
+            font-size: 1.2rem; // Increased size
+
+            @media (max-width:$s) {
+                margin: 10px;
+            }
+            @media (max-width:$xs) {
+                margin: 15px 0;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    
+}
+
+
+
+

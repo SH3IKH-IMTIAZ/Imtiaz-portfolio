@@ -1,0 +1,94 @@
+@import "/src/globas.scss";
+
+.timeline_section {
+  margin: $section-spacing 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .img_shape {
+    height: 15rem;
+    position: absolute;
+    top: -7rem;
+    left: 7rem;
+
+    @media (max-width: $m) {
+      height: 13rem;
+      top: 4rem;
+      left: 5rem;
+    }
+
+    @media (max-width: $xs) {
+      display: none;
+    }
+  }
+
+  .para {
+    width: 40rem;
+
+    @media (max-width: $m) {
+      width: 30rem;
+    }
+
+    @media (max-width: $xs) {
+      width: 100%;
+      padding: 0; // Padding handled by parent
+      font-size: 0.9rem; // Slightly smaller text
+    }
+  }
+
+  @media (max-width: $m) {
+    margin: $section-spacing 0;
+  }
+
+  @media (max-width: $xs) {
+    margin: $section-spacing-mobile 0;
+    padding: 0 1rem;
+  }
+
+  // Timeline content
+  .vertical-timeline {
+    span {
+      color: white;
+      font-family: "Courier Prime", monospace;
+    }
+
+    p,
+    h3,
+    h4,
+    span {
+      color: rgb(39, 40, 34);
+    }
+
+    .vertical-timeline-element-date {
+      color: rgb(39, 40, 34);
+
+      @media (max-width: $xl) {
+        color: rgb(39, 40, 34);
+      }
+    }
+  }
+
+  .vertical-timeline-element {
+    p,
+    h3,
+    h4,
+    span {
+      color: rgb(39, 40, 34);
+    }
+
+    .vertical-timeline-element-date {
+    color: rgb(39, 40, 34);
+
+      @media (max-width: $xl) {
+        color: rgb(39, 40, 34);
+      }
+    }
+  }
+}
+
+// FontAwesome icon color
+.svg-inline--fa {
+  color: white;
+}

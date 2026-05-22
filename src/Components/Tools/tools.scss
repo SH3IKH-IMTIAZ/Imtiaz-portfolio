@@ -1,0 +1,117 @@
+@import '/src/globas.scss';
+
+// Floating Animation
+@keyframes floatUp {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+.tools_section {
+    position: relative;
+    margin: $section-spacing 0;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    z-index: 10;
+
+
+
+    .tools_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1100px;
+        gap: 1.5rem;
+        perspective: 1000px;
+
+        .tool_pill {
+            background: #fff;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            min-width: 140px; // Smaller min-width
+            flex: 1 1 auto; // Allow growing and shrinking
+            
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+            border: 1px solid rgba(0,0,0,0.05);
+            
+            cursor: default;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            
+            // Floating Animation
+            animation: floatUp 4s ease-in-out infinite;
+
+            .icon_container {
+                width: 40px;  // Fixed size for consistency
+                height: 40px; 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                .real_logo {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain; // Ensures logo fits without cutting
+                    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
+                    transition: transform 0.3s;
+                }
+            }
+
+            .text_container {
+                display: flex;
+                flex-direction: column;
+
+                .tool_name {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: #333;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    line-height: 1.2;
+                }
+                
+                .tool_cat {
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    color: #999;
+                    text-transform: uppercase;
+                }
+            }
+
+            // Hover Effects
+            &:hover {
+                animation-play-state: paused;
+                transform: scale(1.08); 
+                box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+                border-color: #eee;
+                z-index: 10;
+                
+                .icon_container .real_logo {
+                    transform: scale(1.15); // Slight pop for the logo
+                }
+            }
+            
+            // Staggered Animation Timings
+            &:nth-child(odd) { animation-duration: 4.5s; animation-delay: 0.2s; }
+            &:nth-child(even) { animation-duration: 5.5s; animation-delay: 0.5s; }
+            &:nth-child(3n) { animation-duration: 4s; animation-delay: 0s; }
+        }
+    }
+
+    .img_shape {
+        position: absolute;
+        opacity: 0.15;
+        z-index: -1;
+        &.tool_shape { 
+            top: 5%; 
+            right: 5%; 
+            width: 12rem; 
+            transform: rotate(20deg); 
+        }
+    }
+}

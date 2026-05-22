@@ -1,0 +1,136 @@
+@import '/src/globas.scss';
+
+
+
+.skills_section{
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5rem;
+    background-color: #ccccccd1;
+    border-radius: 2rem;
+    backdrop-filter: blur( 3px );
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    .heading {
+        margin-bottom: 1.2rem;
+        text-shadow: 2px 2px #aaa;
+    }
+
+    position: relative;
+    z-index: 1000;
+    .img_shape {
+        position: absolute;
+        &.dimond_img_1 {
+            top: 250px;
+            right: 80px;
+            height: 10rem;
+            width: 10rem;
+            @media (max-width:$m) {
+                top: 250px;
+                right: 80px;
+            }
+            @media (max-width:$s) {
+                height: 8rem;
+                width: 8rem;
+                right: 10px;
+            }
+            @media (max-width:$xs) {
+                display: none;
+            }
+        }
+        &.dimond_img_2 {
+            bottom: -800px;
+            right: -100px;
+            height: 20rem;
+            width: 20rem;
+            transform: rotate(30deg);
+            @media (max-width:$s) {
+                height: 15rem;
+                width: 15rem;
+                bottom: -600px;
+            }
+            @media (max-width:$xs) {
+                display: none;
+            }
+        }
+    }
+
+    
+    @media (max-width:$m) {
+        padding: 4rem;
+    }
+    @media (max-width:$s) {
+        padding: 3rem;
+    }
+}
+@keyframes load{
+    from {width: 0%}
+}
+.bar{
+    background-color: #ffffff2a;
+    width: 100%;
+    padding: 2px;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    color: #FFF;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+
+    &::before{
+        content:  attr(data-skill);
+        display: inline-block;
+        padding: 5px 0 5px 10px;
+        border-radius: inherit;
+        animation: load 2s 0s;
+        font-weight: 400;
+        background-color: #1f1f1f;
+    }
+
+    &.learning::before{
+        width: calc(20% - 10px);
+    }
+    &.basic::before{
+        width: calc(40% - 10px);
+    }
+    &.intermediate::before{
+        width: calc(60% - 10px);
+    }
+    &.advanced::before{
+        width: calc(80% - 10px);
+    }
+    &.expert::before{
+        width: calc(100% - 10px);
+    }
+}
+
+
+----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+import { RellaxWrapper } from 'react-rellax-wrapper'
+import { allSkills } from '../../Content/variable'
+import shape4 from '../../Images/shape4.png'
+import './skills.scss'
+
+const SkillsSection = () => {
+  return (
+    <section id='skills' className="skills_section">
+      <RellaxWrapper speed={2}><img className='img_shape dimond_img_1' src={shape4} alt='skills section shape small' /></RellaxWrapper>
+      <h1 className='heading'>SKILLS</h1>
+      {allSkills.map((i,k) => <div key={k} className={`bar ${i.level}`} data-skill={i.name}></div>)}
+      <RellaxWrapper speed={2.2}><img className='img_shape dimond_img_2' src={shape4} alt='skills section shape big' /></RellaxWrapper>
+    </section>
+  )
+}
+
+export default SkillsSection

@@ -1,0 +1,166 @@
+@import '/src/globas.scss';
+
+// 1. Add the Floating Animation Keyframes
+@keyframes floatUp {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+.skills_section {
+    position: relative;
+    margin: $section-spacing 0;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+
+    .skills_grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); // Smaller min-width
+        gap: 3rem 2rem;
+        width: 100%;
+        max-width: 1100px;
+        justify-items: center;
+
+        .skill_gauge_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            width: 100%;
+
+            // 2. Apply the Animation
+            animation: floatUp 4s ease-in-out infinite;
+
+            .gauge_wrapper {
+                position: relative;
+                width: 140px;
+                height: 140px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1rem;
+                transition: transform 0.3s ease;
+
+                // SVG Settings
+                .progress_ring {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: rotate(-90deg);
+                    overflow: visible;
+
+                    .progress_ring_circle_bg {
+                        opacity: 0.3;
+                    }
+
+                    .progress_ring_circle {
+                        transition: stroke-dashoffset 1.5s cubic-bezier(0.35, 0, 0.25, 1);
+                        stroke-linecap: round;
+                        filter: drop-shadow(0 0 4px rgba(0,0,0,0.2));
+                    }
+                }
+
+                // Inner Content
+                .gauge_content {
+                    width: 90px;
+                    height: 90px;
+                    background: rgba(255,255,255,0.8);
+                    backdrop-filter: blur(5px);
+                    border-radius: 50%;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    overflow: hidden;
+
+                    .skill_logo {
+                        width: 50%;
+                        height: 50%;
+                        object-fit: contain;
+                        transition: all 0.3s ease;
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+
+                    .skill_percent {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        font-size: 1.5rem;
+                        font-weight: 800;
+                        color: #333;
+                        opacity: 0;
+                        transform: translate(-50%, -50%) translateY(10px);
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+
+            .skill_meta {
+                text-align: center;
+                transition: transform 0.3s;
+
+                h3 {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: #333;
+                    margin-bottom: 0.2rem;
+                }
+
+                span {
+                    font-size: 0.75rem;
+                    color: #777;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+            }
+
+            // HOVER INTERACTION
+            &:hover {
+                // 3. Pause animation on hover
+                animation-play-state: paused;
+
+                .gauge_wrapper {
+                    transform: scale(1.1);
+
+                    .gauge_content {
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+                        .skill_logo {
+                            opacity: 0.1;
+                            transform: scale(0.8);
+                        }
+                        
+                        .skill_percent {
+                            opacity: 1;
+                            transform: translate(-50%, -50%) translateY(0);
+                        }
+                    }
+                }
+                
+                .skill_meta {
+                    transform: translateY(5px);
+                    h3 { color: #000; }
+                }
+            }
+
+            // 4. Staggered Animation Timings (Same as Tools)
+            &:nth-child(odd) { animation-duration: 4.5s; animation-delay: 0.2s; }
+            &:nth-child(even) { animation-duration: 5.5s; animation-delay: 0.5s; }
+            &:nth-child(3n) { animation-duration: 4s; animation-delay: 0s; }
+        }
+    }
+
+    .img_shape {
+        position: absolute;
+        opacity: 0.15;
+        z-index: -1;
+        &.dimond_img_1 { top: -2rem; left: 0; width: 8rem; }
+        &.dimond_img_2 { bottom: -2rem; right: 0; width: 12rem; transform: rotate(15deg); }
+    }
+}

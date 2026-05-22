@@ -1,0 +1,14 @@
+@import '/src/globas.scss';
+
+
+footer {
+    margin: $section-spacing 0 2rem 0;
+    text-align: center;
+    font-size: 12px;
+    @media (max-width:$s) {
+        margin: $section-spacing-mobile 0 2rem 0;
+    }
+    a {
+        color: #333;
+    }
+}

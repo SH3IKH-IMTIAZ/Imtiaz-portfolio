@@ -1,0 +1,66 @@
+@import '/src/globas.scss';
+
+
+
+.aboutme_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 5rem;
+    margin: $section-spacing 0;
+    .content_col {
+        flex: 5;
+        margin: 1rem;
+        
+        
+        .heading {
+            text-align: left;
+        }
+
+        .resume_btn {
+            // margin-top: 2rem; // Removed, handled by flex container
+            background-color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 0.9rem;
+            display: flex; /* Added for alignment */
+            align-items: center; /* Added for alignment */
+            
+            &:hover {
+                cursor: pointer;
+                background-color: #444;
+            }
+        }
+    }
+    .image_col {
+        flex: 3;
+        margin: 1rem;
+        .img_shape {
+            height: 15rem;
+            position: absolute;
+            top: -200px;
+            @media (max-width: $xs) {
+                display: none;
+            }
+        }
+        .img_main {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            object-fit: contain; 
+            border-radius: 10px; 
+
+            @media (max-width:$m) {
+                max-width: 350px;
+            }
+        }
+    }
+    @media (max-width:$xl) {
+        padding: 0;
+    }
+    @media (max-width:$xs) {
+        flex-direction: column-reverse;
+    }
+}
