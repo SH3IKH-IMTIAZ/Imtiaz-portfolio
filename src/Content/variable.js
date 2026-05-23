@@ -24,7 +24,6 @@ export const bioImage = me
 export const resumeLink = "https://drive.google.com/drive/folders/1b-9c2dp-TE3p4xgYKinMv6WVNHaid9kU?usp=sharing"
 
 
-export const youTubeContent = "I share my knowledge on my YouTube Channel where I teach Tech1 and Tech2" // Placeholder
 
 export const allSkills = [
   {
@@ -33,23 +32,8 @@ export const allSkills = [
     level: 'Expert'
   },
   {
-    name: 'React',
-    percentage: 90,
-    level: 'Expert'
-  },
-  {
     name: 'Node.js',
     percentage: 85,
-    level: 'Advanced'
-  },
-  {
-    name: 'Express.js',
-    percentage: 80,
-    level: 'Advanced'
-  },
-  {
-    name: 'MongoDB',
-    percentage: 80,
     level: 'Advanced'
   },
   {
@@ -62,11 +46,7 @@ export const allSkills = [
     percentage: 70,
     level: 'Intermediate'
   },
-  {
-    name: 'C/C++',
-    percentage: 65,
-    level: 'Intermediate'
-  },
+  
   {
     name: 'Firebase',
     percentage: 75,
@@ -88,21 +68,6 @@ export const allSkills = [
     level: 'Advanced'
   },
   {
-    name: 'Redux',
-    percentage: 80,
-    level: 'Intermediate'
-  },
-  {
-    name: 'Next.js',
-    percentage: 75,
-    level: 'Intermediate'
-  },
-  {
-    name: 'Tailwind',
-    percentage: 90,
-    level: 'Advanced'
-  },
-  {
     name: "Bash",
     level: "Scripting",
     percentage: 85
@@ -113,9 +78,14 @@ export const allSkills = [
     percentage: 80
   },
   {
-    name: "Java",
-    level: "Intermediate",
-    percentage: 75
+    name: "EVE-NG",
+    level: "Advanced",
+    percentage: 85
+  },
+  {
+    name: "GNS3",
+    level: "Advanced",
+    percentage: 85
   }
 ];
 
@@ -145,11 +115,17 @@ export const allProjects = [
 ]
 
 export const timelineData = [
+    {
+    title: "Network & IT Support Engineer",
+    subtitle: "Textile Solution Bangladesh",
+    date: "April 2026 – Present",
+    desc: "Managed and maintained LAN/WAN network infrastructure, configured routers, switches, and access points, and monitored internet connectivity. Maintained firewall and VPN for secure remote access while handling IP addressing, DNS, DHCP management, and IT helpdesk support across departments."
+  },
   {
-    title: "Fullstack Developer (Part-time)",
-    subtitle: "Webnest Solution",
-    date: "May 2025 – December 2025",
-    desc: "Developed and delivered robust, client-specific web applications for diverse clients. Specialized in MERN stack for custom solutions and WordPress for rapid deployment."
+    title: "Freelance Backend Developer",
+    subtitle: "Webnest Solution, Rajshahi",
+    date: "March 2025 – February 2026",
+    desc: "Developed a secure role-based CRM backend system with JWT authentication and RBAC, designing RESTful APIs and managing MongoDB databases, while integrating Redis, Nodemailer, Socket.io, and Helmet.js for enhanced security and performance."
   },
   {
     title: "Web Development Intern",
@@ -176,46 +152,43 @@ export const educationData = [
   {
     title: "Higher Secondary Certificate (Science)",
     subtitle: "Stamford College | Dhaka, Bangladesh",
-    date: "2019",
-    desc: "GPA: 4.33 / 5.00"
+    date: "2020",
+    desc: "GPA: 4.58 / 5.00"
   },
   {
     title: "Secondary school Certificate (Science)",
-    subtitle: "Ashuganj Sar Karkhana College | Ashuganj, Bangladesh",
-    date: "2017",
-    desc: "GPA: 4.41 / 5.00"
+    subtitle: "Wisdom School and College | Brahmanbaria, Bangladesh",
+    date: "2018",
+    desc: "GPA: 4.22 / 5.00"
   }
 ]
 
 
 
-export const instaLink = "https://www.facebook.com/MahmudEBD/" // Keeping placeholder if no FB provided, user provided invalid link structure in text "https://www.linkedin.com/in/3kramz" is LinkedIn
+export const instaLink = "https://www.facebook.com/sk.imtiaz.3348"
 export const linkedInLink = "https://www.linkedin.com/in/imtiaz--sheikh/"
 export const gitHubLink = "https://github.com/SH3IKH-IMTIAZ"
 export const emailAddress = "imtiaz.sheikh.stu@gmail.com "
 export const emailAddress2 = "imtiaz.sheikh.stu@gmail.com "
 
 export const toolsData = [
-  { name: "ClickUp", category: "Productivity", icon: "faTasks" },
-  { name: "Notion", category: "Productivity", icon: "faStickyNote" },
+ 
   { name: "Google Docs", category: "Productivity", icon: "faFileAlt" },
   { name: "Google Sheets", category: "AppScript / Data", icon: "faFileExcel" },
-  { name: "Canva", category: "Design", icon: "faPalette" },
-  { name: "Figma", category: "Design", icon: "faFigma" },
   { name: "VS Code", category: "Development", icon: "faCode" },
   { name: "Google Antigravity", category: "AI Assistant", icon: "faRobot" },
-  { name: "Chrome DevTools", category: "Development", icon: "faWrench" },
   { name: "OWASP Top 10", category: "Security", icon: "faShieldAlt" },
   { name: "Linux", category: "OS", icon: "faLinux" },
   { name: "Kali Linux", category: "OS", icon: "faTerminal" },
   { name: "Burp Suite", category: "Security", icon: "faBug" },
-
-  // NEW ADDITIONS
   { name: "Metasploit", category: "Exploitation", icon: "faBomb" },
   { name: "Wireshark", category: "Network Analysis", icon: "faWifi" },
   { name: "Nmap", category: "Network Scanning", icon: "faEye" },
   { name: "Postman", category: "API Testing", icon: "faPaperPlane" },
-  { name: "OWASP ZAP", category: "DAST Scanner", icon: "faBolt" }
+  { name: "OWASP ZAP", category: "DAST Scanner", icon: "faBolt" },
+  { name: "PuTTY", category: "Terminal", icon: "faTerminal" },
+  
+
 ];
 
 export const phoneNumber = "+880 1719 298 816"

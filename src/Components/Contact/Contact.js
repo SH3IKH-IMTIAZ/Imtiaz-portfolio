@@ -70,7 +70,7 @@ const ContactSection = () => {
             <a href={gitHubLink} target="_blank" rel="noreferrer"><i className="fab fa-github-square"></i></a>
             <a href={linkedInLink} target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a>
             <a href={instaLink} target="_blank" rel="noreferrer"><i className="fab fa-facebook-square"></i></a>
-            <a href="https://wa.me/8801873917876" target="_blank" rel="noreferrer"><i className="fab fa-whatsapp-square"></i></a>
+            <a href="https://wa.me/8801719298816" target="_blank" rel="noreferrer"><i className="fab fa-whatsapp-square"></i></a>
           </div>
         </RellaxWrapper>
       </div>

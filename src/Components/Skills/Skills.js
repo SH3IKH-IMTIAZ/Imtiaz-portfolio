@@ -5,45 +5,33 @@ import './skills.scss'
 
 
 import jsIcon from '../../Images/skills/javascript.svg'
-import reactIcon from '../../Images/skills/react.svg'
 import nodeIcon from '../../Images/skills/nodejs.svg'
-import expressIcon from '../../Images/skills/express.svg'
-import mongoIcon from '../../Images/skills/mongodb.svg'
 import htmlIcon from '../../Images/skills/html.svg'
 import pythonIcon from '../../Images/skills/python.svg'
-import cppIcon from '../../Images/skills/cpp.svg'
 import firebaseIcon from '../../Images/skills/firebase.svg'
 import wordpressIcon from '../../Images/skills/wordpress.svg'
 import gitIcon from '../../Images/skills/git.svg'
 import githubIcon from '../../Images/skills/github.svg'
-import reduxIcon from '../../Images/skills/redux.svg'
-import nextIcon from '../../Images/skills/nextjs.svg'
-import tailwindIcon from '../../Images/skills/tailwind.svg'
 import bashIcon from '../../Images/skills/bash.svg'
-import sqlIcon from '../../Images/skills/mysql.svg' // Using MySQL logo for SQL
-import javaIcon from '../../Images/skills/java.svg'
+import sqlIcon from '../../Images/skills/mysql.svg' 
+import eveIcon from '../../Images/tools/EVE.svg'
+import gns3Icon from '../../Images/tools/gns3.svg'
 
 
 const getLogos = (skillName) => {
     switch (skillName) {
         case 'JavaScript (ES6+)': return jsIcon;
-        case 'React': return reactIcon;
         case 'Node.js': return nodeIcon;
-        case 'Express.js': return expressIcon;
-        case 'MongoDB': return mongoIcon;
         case 'HTML/CSS': return htmlIcon;
         case 'Python': return pythonIcon;
-        case 'C/C++': return cppIcon;
         case 'Firebase': return firebaseIcon;
         case 'WordPress': return wordpressIcon;
         case 'Git': return gitIcon;
         case 'Github': return githubIcon;
-        case 'Redux': return reduxIcon;
-        case 'Next.js': return nextIcon;
-        case 'Tailwind': return tailwindIcon;
        case 'Bash': return bashIcon;
         case 'SQL': return sqlIcon;
-        case 'Java': return javaIcon;
+        case 'EVE-NG': return eveIcon;
+        case 'GNS3': return gns3Icon;
         
         default: return jsIcon;
     }
@@ -52,24 +40,19 @@ const getLogos = (skillName) => {
 
 const getBrandColor = (skillName) => {
     const colors = {
-        'JavaScript (ES6+)': '#F7DF1E',
-        'React': '#61DAFB',       
-        'Node.js': '#339933',     
-        'Express.js': '#fff',
-        'MongoDB': '#47A248',     
+        'JavaScript (ES6+)': '#F7DF1E',             
+        'Node.js': '#339933',            
         'HTML/CSS': '#E34F26',    
-        'Python': '#3776AB',      
-        'C/C++': '#00599C',          
+        'Python': '#3776AB',             
         'Firebase': '#FFCA28',    
         'WordPress': '#21759B',   
         'Git': '#F05032',         
-        'Github': '#181717',      
-        'Redux': '#764ABC',       
-        'Next.js': '#000000',     
-        'Tailwind': '#06B6D4',
-        'Bash': '#4EAA25',      // Green (Bash/Terminal standard)
-        'SQL': '#4479A1',       // MySQL Blue
-        'Java': '#ED8B00'  
+        'Github': '#181717',    
+        'Bash': '#4EAA25',     
+        'SQL': '#4479A1', 
+        'EVE-NG': '#4479A1', 
+        'GNS3': '#4479A1', 
+
     };
     return colors[skillName] || '#555';
 }
