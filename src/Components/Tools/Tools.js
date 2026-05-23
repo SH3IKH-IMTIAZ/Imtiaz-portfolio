@@ -6,8 +6,6 @@ import './tools.scss'
 
 import docsIcon from '../../Images/tools/docs.svg'
 import sheetsIcon from '../../Images/tools/sheets.svg'
-import canvaIcon from '../../Images/tools/canva.svg'
-import figmaIcon from '../../Images/tools/figma.svg'
 import vscodeIcon from '../../Images/tools/vscode.svg'
 import googleIcon from '../../Images/tools/google.svg'
 import kaliIcon from '../../Images/tools/kali.svg'
