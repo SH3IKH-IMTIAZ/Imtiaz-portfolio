@@ -24,10 +24,17 @@ const ContactSection = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
+    const templateParams = {
+      name: name,        
+      title: mssg,        
+      email: email,       
+      number: number
+    };
+
+    emailjs.send(
       process.env.REACT_APP_EMAILJS_SERVICE_ID,
       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      form.current,
+      templateParams,
       process.env.REACT_APP_EMAILJS_PUBLIC_KEY
     )
       .then(() => {
@@ -39,7 +46,7 @@ const ContactSection = () => {
         setMssg('');
       })
       .catch((error) => {
-        console.error("EmailJS Error:", error); // Logs the exact error to console
+        console.error("EmailJS Error:", error);
         toast.error('Uh Oh! Some error occurred', { theme: 'dark' });
       });
   };
@@ -59,7 +66,7 @@ const ContactSection = () => {
             </div>
             <div className='contact_info_item'>
               <FontAwesomeIcon icon={faPhoneAlt} size="lg" color="#333" />
-              <span>+8801873917876</span>
+              <span>+8801719298816</span>
             </div>
             <div className='contact_info_item'>
               <FontAwesomeIcon icon={faEnvelope} size="lg" color="#333" />

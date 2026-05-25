@@ -168,8 +168,8 @@ export const educationData = [
 export const instaLink = "https://www.facebook.com/sk.imtiaz.3348"
 export const linkedInLink = "https://www.linkedin.com/in/imtiaz--sheikh/"
 export const gitHubLink = "https://github.com/SH3IKH-IMTIAZ"
-export const emailAddress = "imtiaz.sheikh.stu@gmail.com "
-export const emailAddress2 = "imtiaz.sheikh.stu@gmail.com "
+export const emailAddress = "imtiaz.sheikh.stu@gmail.com"
+export const emailAddress2 = "skimtiaz2017@gmail.com "
 
 export const toolsData = [
  

@@ -15,7 +15,7 @@ const AboutSection = () => {
                         <h1 className='heading'>ABOUT ME</h1>
                         {bioContent.map((i, k) => <p key={k} className='para'>{i}</p>)}
 
-                        <div style={{ display: 'flex', gap: '15px', marginTop: '2rem', flexWrap: 'wrap' }}>
+                        <div className='btn_group'>
                             <a href={resumeLink} target="_blank" rel="noreferrer" className='resume_btn_link'>
                                 <button className='resume_btn'>
                                     <span>Download Resume</span>

@@ -17,6 +17,23 @@
             text-align: left;
         }
 
+        .btn_group {
+            display: flex;
+            gap: 15px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+
+            @media (max-width: $xs) {
+                flex-direction: column;
+                width: 100%;
+                
+                a, button {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+
         .resume_btn {
             // margin-top: 2rem; // Removed, handled by flex container
             background-color: #333;
